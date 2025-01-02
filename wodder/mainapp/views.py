@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import WorkoutListing
 
 # Create your views here.
 
@@ -11,3 +12,6 @@ def test_view(request):
 def user_page(request): # here the user can also submit workouts
     pass
 
+def catalog(request):
+    listings = WorkoutListing.objects.filter(active=True)
+    return render(request, 'wodder/catalog.html', {'listings': listings})
