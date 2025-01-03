@@ -11,11 +11,18 @@ class User(AbstractUser):
     def __str__(self):
         return f"{self.username} - {self.name}"
     
+class Category(models.Model):
+    name = models.CharField(max_length=12)
+
+    def __str__(self):
+        return self.name
+    
 class WorkoutListing(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     image_url = models.URLField(max_length=4096, blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='listings')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='categories', blank=True, null=True)
 
     def __str__(self):
         return self.title
