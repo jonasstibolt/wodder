@@ -13,3 +13,9 @@ node_modules/
 
 # Ignore dist directory
 dist/
+
+# Ignore DB files
+*.db.sqlite3
+
+# Ignore media files
+media/
