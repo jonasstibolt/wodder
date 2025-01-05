@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: [
     './mainapp/templates/**/*.html',
     './mainapp/static/wodder/**/*.css',
